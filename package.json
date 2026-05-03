@@ -1,0 +1,42 @@
+{
+  "name": "fidel-chat",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Next.js web interface for the Fidel conversational application stack.",
+  "author": {
+    "name": "Akash Chaudhary",
+    "url": "https://chaudharyakash.com"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "node --test",
+    "test:e2e": "npm run test:e2e:smoke",
+    "test:e2e:smoke": "npm run build && playwright test tests/e2e/smoke.spec.mjs",
+    "test:e2e:full": "npm run build && playwright test"
+  },
+  "dependencies": {
+    "lucide-react": "^0.400.0",
+    "next": "14.2.5",
+    "next-themes": "^0.4.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.5.3"
+  }
+}
