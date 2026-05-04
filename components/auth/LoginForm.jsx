@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import { useAuth } from "@/components/contexts/AuthProvider";
@@ -28,11 +29,20 @@ export default function LoginForm() {
       }}
       className="w-full max-w-sm space-y-4 rounded-2xl border border-gray-200 bg-white/90 p-5 shadow-xl backdrop-blur-xl dark:border-gray-700 dark:bg-gray-800/90 sm:max-w-md sm:p-6"
     >
-      <div>
+      <div className="flex flex-col items-center text-center">
+        <div className="brand-gradient-soft mb-4 flex h-20 w-20 items-center justify-center rounded-[1.75rem] border border-white/70 shadow-lg shadow-slate-900/5 dark:border-white/10">
+          <Image
+            src="/fidel-logo.png"
+            alt="Fidel logo"
+            width={54}
+            height={47}
+            priority
+          />
+        </div>
         <h1 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
           {isSignup ? "መለያ ፍጠር" : "ግባ"}
         </h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400">
+        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
           {isSignup ? "ፊደል ቻትን ለመጠቀም መለያዎን ይፍጠሩ።" : "ወደ ውይይቶችዎ በደህና ይግቡ።"}
         </p>
       </div>
