@@ -9,7 +9,7 @@ export default function MessageInput({
   const { isFetching } = useRequestState();
 
   return (
-    <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 px-3 pb-3 pt-8 sm:px-4 sm:pb-4 sm:pt-10">
+    <div className="brand-soft-surface pointer-events-none sticky inset-x-0 bottom-0 z-20">
       <div className="mx-auto flex w-full max-w-4xl flex-col gap-2">
         <div className="pointer-events-auto flex items-end justify-center gap-3 sm:gap-4">
           <form

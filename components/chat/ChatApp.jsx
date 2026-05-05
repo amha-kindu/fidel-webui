@@ -72,7 +72,7 @@ export default function ChatApp() {
         </div>
       )}
 
-      <div className="relative flex min-h-0 flex-1">
+      <div className="relative flex flex-col min-h-0 flex-1">
         <div
           ref={setScrollContainer}
           className="brand-soft-surface flex-1 overflow-y-auto overflow-x-hidden pb-32 sm:pb-40"
