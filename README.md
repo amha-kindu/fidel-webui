@@ -72,7 +72,7 @@ concerns, and this cleanup preserves the existing API contract exactly.
 
 | Variable | Purpose |
 | --- | --- |
-| `NEXT_PUBLIC_API_URL` | Base URL for the authenticated chat backend, typically `fidel-api` |
+| `NEXT_PUBLIC_API_URL` | Optional local override for the authenticated chat backend; deployed environments default to same-origin `/api/v1` |
 | `NEXT_PUBLIC_PAGE_SIZE` | Page size used for `GET /chats/:id` message history |
 | `NEXT_PUBLIC_CH_PAGE_SIZE` | Page size used for `GET /chats` conversation history |
 
@@ -212,6 +212,9 @@ Available test scripts:
 
 The Playwright suite mocks the backend in-browser, so routine frontend verification does not
 require a running `fidel-api` instance.
+
+In cluster deployments the app defaults to `/api/v1`, so the same built image can move from
+staging to production unchanged.
 
 ## Development Focus
 

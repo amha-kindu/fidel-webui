@@ -9,11 +9,8 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 FROM base AS builder
-# NEXT_PUBLIC_* values are compiled into the client bundle during next build.
-ARG NEXT_PUBLIC_API_URL
 ARG NEXT_PUBLIC_PAGE_SIZE=10
 ARG NEXT_PUBLIC_CH_PAGE_SIZE=10
-ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 ENV NEXT_PUBLIC_PAGE_SIZE=$NEXT_PUBLIC_PAGE_SIZE
 ENV NEXT_PUBLIC_CH_PAGE_SIZE=$NEXT_PUBLIC_CH_PAGE_SIZE
 COPY --from=deps /app/node_modules ./node_modules
