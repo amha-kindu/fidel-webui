@@ -1,6 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 import "highlight.js/styles/github.css";
 import "highlight.js/styles/github-dark.css";
 
@@ -9,7 +10,7 @@ export default function MarkdownMessage({ content, isDark }) {
 
   return (
     <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
+      remarkPlugins={[remarkGfm, remarkBreaks]}
       rehypePlugins={[rehypeHighlight]}
       components={{
         h1: ({ children, ...props }) => (
@@ -23,7 +24,7 @@ export default function MarkdownMessage({ content, isDark }) {
           </h2>
         ),
         p: ({ children, ...props }) => (
-          <p className="mb-2 break-words leading-relaxed" {...props}>
+          <p className="mb-2 break-words leading-relaxed whitespace-pre-wrap" {...props}>
             {children}
           </p>
         ),
