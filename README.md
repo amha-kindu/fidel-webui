@@ -138,7 +138,7 @@ Example stream event payload:
 Create a local environment file:
 
 ```bash
-cp .env.example .env.local
+cp .env.example .env
 ```
 
 Configure the backend base URL:
